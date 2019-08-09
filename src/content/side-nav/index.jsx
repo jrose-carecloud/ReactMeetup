@@ -28,3 +28,5 @@ export const SideNav = ({ setActiveContent }) => {
     </div>
   );
 };
+
+SideNav.whyDidYouRender = true;

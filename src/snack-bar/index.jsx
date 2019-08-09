@@ -19,3 +19,5 @@ export const SnackBar = _ => {
     </div>
   );
 };
+
+SnackBar.whyDidYouRender = true;

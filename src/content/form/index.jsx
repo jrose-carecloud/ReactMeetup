@@ -95,7 +95,9 @@ export const Form = _ => {
           </select>
         </div>
         <div className={classes.formItem}>
-          <label>Account Date</label>
+          <label>
+            Account Date
+          </label>
           <input type="date" />
         </div>
         <div className={classes.button}>
@@ -107,3 +109,5 @@ export const Form = _ => {
     </div>
   );
 };
+
+Form.whyDidYouRender = true;
