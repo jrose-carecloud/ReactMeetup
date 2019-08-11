@@ -1,21 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./SideNav.module.scss";
-import { ProfileContext } from "../../context";
+import Profile from "./profile";
 
 export const SideNav = ({ setActiveContent }) => {
   const linkClick = name => _ => {
     window.history.pushState("", name, `${name.toLowerCase()}`);
     setActiveContent(name.toLowerCase());
   };
-  const { profile } = useContext(ProfileContext);
+  console.log(`Rendering: SideNav. \nTotal renders: ${++window.totalRenders}`);
   return (
     <div>
-      <div className={classes.profileCard}>
-        <div className={classes.name}>
-          {`${profile.firstName} ${profile.lastName}`}
-        </div>
-        <div>Administrator</div>
-      </div>
+      <Profile />
       {[
         { icon: "fas fa-columns", name: "Dashboard" },
         { icon: "fas fa-dollar-sign", name: "Financials" },

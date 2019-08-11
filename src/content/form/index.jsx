@@ -4,6 +4,7 @@ import { SnackbarContext } from "../../context";
 
 export const Form = _ => {
   const { setMessage } = useContext(SnackbarContext);
+  console.log(`Rendering: Form. \nTotal renders: ${++window.totalRenders}`);
   return (
     <div className={classes.root}>
       <div className={classes.header}>Form</div>

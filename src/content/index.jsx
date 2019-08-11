@@ -1,20 +1,17 @@
-import React, { useState, memo } from "react";
+import React, { useState } from "react";
 import classes from "./Content.module.scss";
 import { SideNav } from "./side-nav";
-import { Form } from "./form";
+import { ProfileContextProvider } from "../context";
 import { Settings } from "./settings";
-import { ProfileContext } from "../context";
+import { Form } from "./form";
 
-export const Content = memo(_ => {
+export const Content = _ => {
   const [activeContent, setActiveContent] = useState(
     window.location.pathname.split("/")[1] || "dashboard"
   );
-  const [profile, setProfile] = useState({
-    firstName: "Jonathan",
-    lastName: "Rose"
-  });
+  console.log(`Rendering: Content. \nTotal renders: ${++window.totalRenders}`);
   return (
-    <ProfileContext.Provider value={{ setProfile, profile }}>
+    <ProfileContextProvider>
       <div className={classes.content}>
         <div className={classes.sideNavWrapper}>
           <SideNav setActiveContent={setActiveContent} />
@@ -31,6 +28,6 @@ export const Content = memo(_ => {
           }
         </div>
       </div>
-    </ProfileContext.Provider>
+    </ProfileContextProvider>
   );
-});
+};
