@@ -6,7 +6,7 @@ export const SnackBar = _ => {
   const [remove, setRemove] = useState(false);
   const {
     state: { message },
-    dispatch
+    dispatch,
   } = useContext(GlobalContext);
   if (!message) return null;
   remove
@@ -14,7 +14,8 @@ export const SnackBar = _ => {
         _ =>
           dispatch({ type: "setMessage", payload: String() }) ||
           setRemove(false),
-        600
+        600,
+
       )
     : setTimeout(_ => setRemove(true), 5000);
   console.log(`Rendering: SnackBar. \nTotal renders: ${++window.totalRenders}`);
@@ -27,3 +28,5 @@ export const SnackBar = _ => {
     </div>
   );
 };
+
+SnackBar.whyDidYouRender = true;

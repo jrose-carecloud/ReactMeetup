@@ -5,7 +5,7 @@ import { GlobalContext } from "../../context";
 export const Settings = _ => {
   const {
     state: { profile },
-    dispatch
+    dispatch,
   } = useContext(GlobalContext);
   const handleProfileChange = field => e =>
     dispatch({
@@ -39,3 +39,5 @@ export const Settings = _ => {
     </div>
   );
 };
+
+Settings.whyDidYouRender = true;

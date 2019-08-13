@@ -30,3 +30,5 @@ export const SideNav = _ => {
     </div>
   );
 };
+
+SideNav.whyDidYouRender = true;

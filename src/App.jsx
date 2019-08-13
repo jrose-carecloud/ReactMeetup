@@ -1,9 +1,11 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { SnackBar } from "./snack-bar";
 import { Content } from "./content";
 import classes from "./App.module.scss";
-import { GlobalContext } from "./context";
+import { GlobalContextProvider } from "./context";
 
+const whyDidYouRender = require("@welldone-software/why-did-you-render");
+whyDidYouRender(React);
 const App = _ => {
   console.log(`Rendering: App. \nTotal renders: ${++window.totalRenders}`);
   const reducer = (state, { type, payload }) =>
@@ -28,3 +30,4 @@ const App = _ => {
 };
 
 export default App;
+App.whyDidYouRender = true;

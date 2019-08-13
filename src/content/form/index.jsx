@@ -111,3 +111,5 @@ export const Form = _ => {
     </div>
   );
 };
+
+Form.whyDidYouRender = true;

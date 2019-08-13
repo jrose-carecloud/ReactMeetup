@@ -7,7 +7,7 @@ import { GlobalContext } from "../context";
 
 export const Content = _ => {
   const {
-    state: { activeContent }
+    state: { activeContent },
   } = useContext(GlobalContext);
   console.log(`Rendering: Content. \nTotal renders: ${++window.totalRenders}`);
   return (
@@ -22,10 +22,13 @@ export const Content = _ => {
             financials: <div>Financials</div>,
             profile: <div>Profile</div>,
             settings: <Settings />,
-            form: <Form />
+            form: <Form />,
           }[activeContent]
         }
       </div>
     </div>
   );
+
 };
+
+Content.whyDidYouRender = true;
