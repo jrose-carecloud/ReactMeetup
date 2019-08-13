@@ -4,6 +4,8 @@ import { SideNav } from "./side-nav";
 import { ProfileContextProvider } from "../context";
 import { Settings } from "./settings";
 import { Form } from "./form";
+import Profile from './profile'
+
 
 export const Content = _ => {
   const [activeContent, setActiveContent] = useState(
@@ -21,7 +23,7 @@ export const Content = _ => {
             {
               dashboard: <div>Dashboard</div>,
               financials: <div>Financials</div>,
-              profile: <div>Profile</div>,
+              profile: <Profile />,
               settings: <Settings />,
               form: <Form />
             }[activeContent]
@@ -30,4 +32,5 @@ export const Content = _ => {
       </div>
     </ProfileContextProvider>
   );
-};
+
+Content.whyDidYouRender = true;
