@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import classes from './Form.module.scss';
-import { GlobalContext } from '../../context';
+import React, { useContext } from "react";
+import classes from "./Form.module.scss";
+import { GlobalContext } from "../../context";
 
 export const Form = _ => {
   const { dispatch } = useContext(GlobalContext);
@@ -98,9 +98,17 @@ export const Form = _ => {
           <input type="date" />
         </div>
         <div className={classes.button}>
-          <button onClick={_ => dispatch({ type: 'setMessage', payload: 'Submission Success' })}>Submit</button>
+          <button
+            onClick={_ =>
+              dispatch({ type: "setMessage", payload: "Submission Success" })
+            }
+          >
+            Submit
+          </button>
         </div>
       </div>
     </div>
   );
 };
+
+Form.whyDidYouRender = true;

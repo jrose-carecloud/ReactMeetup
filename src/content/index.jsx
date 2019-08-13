@@ -1,13 +1,13 @@
-import React, { useContext, memo } from 'react';
-import classes from './Content.module.scss';
-import { SideNav } from './side-nav';
-import { Form } from './form';
-import { Settings } from './settings';
-import { GlobalContext } from '../context';
+import React, { useContext, memo } from "react";
+import classes from "./Content.module.scss";
+import { SideNav } from "./side-nav";
+import { Form } from "./form";
+import { Settings } from "./settings";
+import { GlobalContext } from "../context";
 
 export const Content = memo(_ => {
   const {
-    state: { activeContent }
+    state: { activeContent },
   } = useContext(GlobalContext);
   return (
     <div className={classes.content}>
@@ -21,10 +21,12 @@ export const Content = memo(_ => {
             financials: <div>Financials</div>,
             profile: <div>Profile</div>,
             settings: <Settings />,
-            form: <Form />
+            form: <Form />,
           }[activeContent]
         }
       </div>
     </div>
   );
 });
+
+Content.whyDidYouRender = true;
