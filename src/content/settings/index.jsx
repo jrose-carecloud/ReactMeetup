@@ -10,8 +10,9 @@ export const Settings = _ => {
   const handleProfileChange = field => e =>
     dispatch({
       type: "setProfile",
-      payload: { ...profile, [field]: e.target.value },
+      payload: { ...profile, [field]: e.target.value }
     });
+  console.log(`Rendering: Settings. \nTotal renders: ${++window.totalRenders}`);
   return (
     <div className={classes.root}>
       <div className={classes.header}>Settings</div>

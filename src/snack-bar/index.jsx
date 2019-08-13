@@ -15,8 +15,10 @@ export const SnackBar = _ => {
           dispatch({ type: "setMessage", payload: String() }) ||
           setRemove(false),
         600,
+
       )
     : setTimeout(_ => setRemove(true), 5000);
+  console.log(`Rendering: SnackBar. \nTotal renders: ${++window.totalRenders}`);
   return (
     <div>
       <div className={`${classes.wrapper} ${remove && classes.remove}`}>

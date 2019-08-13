@@ -4,6 +4,7 @@ import { GlobalContext } from "../../context";
 
 export const Form = _ => {
   const { dispatch } = useContext(GlobalContext);
+  console.log(`Rendering: Form. \nTotal renders: ${++window.totalRenders}`);
   return (
     <div className={classes.root}>
       <div className={classes.header}>Form</div>
