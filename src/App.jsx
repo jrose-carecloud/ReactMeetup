@@ -1,5 +1,5 @@
 import React from 'react';
-import { SnackBar } from './snack-bar';
+import { SnackBar } from './snack-bar/SnackBar.renderProps';
 import { Content } from './content';
 import classes from './App.module.scss';
 import { SnackbarContextProvider } from './context';
