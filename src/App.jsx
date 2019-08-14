@@ -1,8 +1,8 @@
-import React from "react";
-import { SnackBar } from "./snack-bar";
-import { Content } from "./content";
-import classes from "./App.module.scss";
-import { SnackbarContextProvider } from "./context";
+import React from 'react';
+import { SnackBar } from './snack-bar';
+import { Content } from './content';
+import classes from './App.module.scss';
+import { SnackbarContextProvider } from './context';
 
 const App = _ => {
   console.log(`Rendering: App. \nTotal renders: ${++window.totalRenders}`);

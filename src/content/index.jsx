@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import classes from "./Content.module.scss";
-import { SideNav } from "./side-nav";
-import { ProfileContextProvider } from "../context";
-import { Settings } from "./settings";
-import { Form } from "./form";
+import React, { useState } from 'react';
+import classes from './Content.module.scss';
+import { SideNav } from './side-nav';
+import { ProfileContextProvider } from '../context';
+import { Settings } from './settings';
+import { Form } from './form';
 
 export const Content = _ => {
-  const [activeContent, setActiveContent] = useState(
-    window.location.pathname.split("/")[1] || "dashboard"
-  );
+  const [activeContent, setActiveContent] = useState(window.location.pathname.split('/')[1] || 'dashboard');
   console.log(`Rendering: Content. \nTotal renders: ${++window.totalRenders}`);
   return (
     <ProfileContextProvider>
